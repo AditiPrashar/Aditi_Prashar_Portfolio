@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+:root {
+    --primary-color: #16423C;
+    --secondary-color: #f4f4f4;
+    --text-color: #6A9C89;
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #E9EFEC;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+nav {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 1rem 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color var(--transition-speed);
+}
+
+nav ul li a:hover {
+    color: #333;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+.section {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.education-item, .project-card {
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: transform var(--transition-speed);
+}
+
+.education-item:hover, .project-card:hover {
+    transform: translateY(-5px);
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 250px;
+}
+
+.skill-category ul {
+    list-style-type: none;
+}
+
+.skill-category li {
+    margin-bottom: 0.5rem;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color var(--transition-speed);
+}
+
+.contact-links a:hover {
+    color: #333;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .skills-container {
+        flex-direction: column;
+    }
+}
